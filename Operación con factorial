@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main() 
+{
+    int i, j, N, n, fact;
+
+    printf("Ingrese el numero N: ");
+    scanf("%d", &N); // Leer el número de iteraciones ingresado por el usuario
+    for (i = 1; i <= N; i++) {
+        printf("Ingrese el numero %d: ", i);
+        scanf("%d", &n); // Leer el número ingresado por el usuario
+
+        fact = 1; // Inicializar el factorial como 1
+        for (j = 1; j <= n; j++) {
+            fact = fact * j; // Calcular el factorial multiplicando el factorial actual por el número actual
+        }
+
+        printf("%d! = %d\n", n, fact); // Mostrar el factorial del número ingresado
+    }
+    getch(); 
+    return 0;
+}
