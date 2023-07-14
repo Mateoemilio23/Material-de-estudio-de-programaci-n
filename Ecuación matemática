@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+int main() 
+{
+    double x, pi, y;
+    pi = acos(-1);  // Valor de pi usando la función acos
+
+    printf("Ingrese el valor de x: ");
+    scanf("%lf", &x);
+
+    y = (pow(x, 2) / (pow(pi, 2) * (pow(x, 2) + 0.5))) * (1 + ((pow(x, 2) / pow(pi, 2)) * (pow(x, 2) - 0.5)));
+
+    printf("El valor de y es: %lf\n", y);
+    getch();
+    return 0;
+}
