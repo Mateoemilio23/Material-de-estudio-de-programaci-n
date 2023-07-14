@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main() 
+{
+    int n;
+    float suma = 0;
+    float promedio;
+    printf("Ingrese la cantidad de numeros: ");
+    scanf("%d", &n);
+    if (n <= 0) 
+	{
+        printf("La cantidad de numeros debe ser mayor que cero.\n");
+        return 0;
+    }
+    printf("Ingrese los %d numeros:\n", n);
+    for (int i = 0; i < n; i++) 
+	{
+        float numero;
+        scanf("%f", &numero);
+        suma += numero;
+    }
+    promedio = suma / n;
+    printf("El promedio de los %d numeros ingresados es: %.2f\n", n, promedio);
+    getch();
+    return 0;
+}
