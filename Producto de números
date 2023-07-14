@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main() 
+{
+    int N;
+    int producto = 1;
+    printf("Ingrese un numero entero N: ");
+    scanf("%d", &N);
+    if (N < 1) {
+        printf("N debe ser un numero entero positivo.\n");
+        return 0;
+    }
+    for (int i = 1; i <= N; i++) 
+   {
+        producto *= i;
+    }
+    printf("El producto P = 1 * 2 * 3 * ... * N es: %d\n", producto);
+    getch();
+    return 0;
+}
