@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main() 
+{
+    int n;
+    float suma = 0;
+    printf("Ingrese el valor de 'n': ");
+    scanf("%d", &n);
+    if (n <= 0) 
+	{
+        printf("'n' debe ser mayor que cero.\n");
+        return 0;
+    }
+    for (int i = 1; i <= n; i++) 
+	{
+        if (i % 2 == 0) 
+		{
+            suma -= 1.0 / i;
+        } else {
+            suma += 1.0 / i;
+        }
+    }
+    printf("La suma de los %d terminos de la serie es: %.2f\n", n, suma);
+    getch();
+    return 0;
+}
