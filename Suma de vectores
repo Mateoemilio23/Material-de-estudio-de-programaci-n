@@ -1,0 +1,45 @@
+//Suma de Vectores
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int main()
+{
+	int i,n,cont=0;
+	float prom,acu=0;
+	srand(time(NULL));
+	printf("Ingrese el tamaño del vector 1 y 2:");
+	scanf("%d",&n);
+	//Definición del vector
+	int vec1[n],vec2[n],vec3[n];
+	
+	//Insertar datos en el vector
+	printf("INSERTAR AUTOMATICAMENTE DATOS\n");
+	for(i=0; i<n; i++)
+	{
+		vec1[i]=rand()%11;
+		vec2[i]=rand()%11;
+		vec3[i]=vec1[i]+vec2[i];
+	}
+	
+	//Imprimir Vector 1
+	printf("IMPRIMIR VECTOR 1\n");
+	for(i=0; i<n; i++)
+	{
+		printf("%d\t",vec1[i]);
+	}
+	//Imprimir Vector 2
+	printf("\nIMPRIMIR VECTOR 2\n");
+	for(i=0; i<n; i++)
+	{
+		printf("%d\t",vec2[i]);
+	}
+
+	//Imprimir La Suma de Vectores
+	printf("\nIMPRIMIR SUMA\n");
+	for(i=0; i<n; i++)
+	{
+		printf("%d\t",vec3[i]);
+	}
+	getch();
+	return 0;
+}
