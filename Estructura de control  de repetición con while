@@ -1,0 +1,16 @@
+#include <stdio.h> //Biblioteca  para operaciones de entrada y salida
+int main() //Función principal del programa
+{
+
+    int contador = 1; // Variable para almacenar el valor del contador
+
+    while (contador <= 7)  // Estructura de control de repetición mientras contador sea menor o igual a 5
+	{
+        printf("Contador: %d\n", contador); // Imprimir el valor actual del contador
+        contador++; // Incrementar el contador en 1 en cada iteración del bucle
+    }
+
+    printf("Fin del programa.\n"); // Imprimir un mensaje indicando el fin del programa
+    getch();
+    return 0;
+}
