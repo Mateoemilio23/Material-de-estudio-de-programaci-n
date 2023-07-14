@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() 
+{
+    int cantidadFosforos, cajas, paquetes, cajasSobrantes, fosforosSobrantes;
+
+    printf("Ingrese la cantidad de fósforos producidos: ");
+    scanf("%d", &cantidadFosforos); // Leer la cantidad de fósforos producidos ingresada por el usuario
+
+    cajas = cantidadFosforos / 40; // Cálculo de la cantidad de cajas, dividiendo la cantidad de fósforos por 40
+    cantidadFosforos = cantidadFosforos % 40; // Actualizar la cantidad de fósforos con el residuo de la división
+
+    paquetes = cajas / 12; // Cálculo de la cantidad de paquetes, dividiendo la cantidad de cajas por 12
+    cajasSobrantes = cajas % 12; // Calcular las cajas sobrantes, obteniendo el residuo de la división
+
+    fosforosSobrantes = cantidadFosforos; // Los fósforos sobrantes serán los que quedaron después de empaquetar todos los paquetes y cajas
+
+    printf("Cantidad de cajas producidas: %d\n", cajas); // Mostrar la cantidad de cajas producidas
+    printf("Cantidad de paquetes producidos: %d\n", paquetes); // Mostrar la cantidad de paquetes producidos
+    printf("Cajas sobrantes: %d\n", cajasSobrantes); // Mostrar las cajas sobrantes
+    printf("Fósforos sobrantes: %d\n", fosforosSobrantes); // Mostrar los fósforos sobrantes
+    getch();
+    return 0;
+}
