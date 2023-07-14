@@ -1,0 +1,37 @@
+#include <stdio.h> //Biblioteca  para operaciones de entrada y salida
+int main() //Función principal del programa
+{
+    int numero; // Variable para almacenar el número ingresado por el usuario
+
+    printf("Ingrese un numero del 1 al 7: ");
+    scanf("%d", &numero); // Leer el número ingresado por el usuario y almacenarlo en la variable 'numero'
+
+    switch (numero) 
+	{
+        case 1:
+            printf("Lunes\n"); // Imprimir "Lunes" si el número es 1
+            break;
+        case 2:
+            printf("Martes\n"); // Imprimir "Martes" si el número es 2
+            break;
+        case 3:
+            printf("Miercoles\n"); // Imprimir "Miércoles" si el número es 3
+            break;
+        case 4:
+            printf("Jueves\n"); // Imprimir "Jueves" si el número es 4
+            break;
+        case 5:
+            printf("Viernes\n"); // Imprimir "Viernes" si el número es 5
+            break;
+        case 6:
+            printf("Sabado\n"); // Imprimir "Sábado" si el número es 6
+            break;
+        case 7:
+            printf("Domingo\n"); // Imprimir "Domingo" si el número es 7
+            break;
+        default:
+            printf("Numero invalido\n"); // Imprimir "Número inválido" si el número no coincide con ninguno de los casos anteriores
+    }
+    getch();
+    return 0;
+}
