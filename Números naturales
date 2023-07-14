@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main() 
+{
+    int n, num;
+    int menor15 = 0, mayor50 = 0, entre25y45 = 0;
+
+    printf("Ingrese la cantidad de numeros a ingresar: ");
+    scanf("%d", &n); // Leer la cantidad de números ingresada por el usuario
+
+    if (n <= 0) {
+        printf("La cantidad de numeros debe ser mayor que cero.\n");
+        return 0; // Salir del programa si n es menor o igual a cero
+    }
+
+    printf("Ingrese los %d numeros:\n", n);
+
+    for (int i = 1; i <= n; i++) {
+        scanf("%d", &num); // Leer cada número ingresado por el usuario
+
+        if (num < 15) {
+            menor15++; // Incrementar el contador de números menores a 15
+        }
+
+        if (num > 50) {
+            mayor50++; // Incrementar el contador de números mayores a 50
+        }
+
+        if (num >= 25 && num <= 45) {
+            entre25y45++; // Incrementar el contador de números comprendidos entre 25 y 45
+        }
+    }
+
+    printf("Cantidad de numeros menores a 15: %d\n", menor15);
+    printf("Cantidad de numeros mayores a 50: %d\n", mayor50);
+    printf("Cantidad de numeros comprendidos entre 25 y 45: %d\n", entre25y45);
+
+    getch(); // Esperar a que el usuario presione una tecla
+    return 0;
+}
