@@ -1,0 +1,44 @@
+//Generar valores aleatorios 
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int main()
+{
+	int i,n, mayor=0,menor=11,acu=0;
+	float prom;
+	srand(time(NULL));
+	printf("Ingrese el tamaño del vector:");
+	scanf("%d",&n);
+	//Definición del vector
+	int vec[n];
+	
+	//Insertar datos en el vector
+	printf("INSERTAR AUTOMATICAMENTE DATOS\n");
+	for(i=0; i<n; i++)
+	{
+		vec[i]=rand()%11;
+		if(vec[i]>mayor)
+		{
+			mayor=vec[i];
+		}
+		if(vec[i]<menor)
+		{
+			menor=vec[i];
+		}
+		acu=acu+vec[i];
+	}
+	
+	//Imprimir Vector
+	printf("IMPRIMIR DATOS\n");
+	for(i=0; i<n; i++)
+	{
+		printf("%d\t",vec[i]);
+	}
+	printf("\nEl mayor es: %d",mayor);
+	printf("\nEl menor es: %d",menor);
+	printf("\nLa suma de los elementos es: %d",acu);
+	prom=(acu/n);
+	printf("\nEl promedio de los elementos es: %f",prom);
+	getch();
+	return 0;
+}
