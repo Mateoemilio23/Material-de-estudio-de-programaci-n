@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main() 
+{
+    float ART1, ART2, ART3, ART4, ART5; // Variables para almacenar el valor de cada artículo
+    float SUBTOTAL, IVA, TOTAL; // Variables para almacenar el subtotal, el IVA y el total a pagar
+
+    printf("Ingrese el valor del primer articulo: ");
+    scanf("%f", &ART1); // Leer el valor del primer artículo ingresado por el usuario y almacenarlo en la variable ART1
+
+    printf("Ingrese el valor del segundo articulo: ");
+    scanf("%f", &ART2); // Leer el valor del segundo artículo ingresado por el usuario y almacenarlo en la variable ART2
+
+    printf("Ingrese el valor del tercer articulo: ");
+    scanf("%f", &ART3); // Leer el valor del tercer artículo ingresado por el usuario y almacenarlo en la variable ART3
+
+    printf("Ingrese el valor del cuarto articulo: ");
+    scanf("%f", &ART4); // Leer el valor del cuarto artículo ingresado por el usuario y almacenarlo en la variable ART4
+
+    printf("Ingrese el valor del quinto articulo: ");
+    scanf("%f", &ART5); // Leer el valor del quinto artículo ingresado por el usuario y almacenarlo en la variable ART5
+
+    SUBTOTAL = ART1 + ART2 + ART3 + ART4 + ART5; // Calcular el subtotal sumando los valores de los 5 artículos
+
+    IVA = SUBTOTAL * 0.12; // Calcular el IVA aplicando el 12% (0.12) al subtotal
+
+    TOTAL = SUBTOTAL + IVA; // Calcular el total a pagar sumando el subtotal y el IVA
+
+    printf("Subtotal: %.2f\n", SUBTOTAL); // Mostrar el subtotal en pantalla con dos decimales
+    printf("IVA: %.2f\n", IVA); // Mostrar el IVA en pantalla con dos decimales
+    printf("Total a Pagar: %.2f\n", TOTAL); // Mostrar el total a pagar en pantalla con dos decimales
+    getch();
+    return 0;
+}
