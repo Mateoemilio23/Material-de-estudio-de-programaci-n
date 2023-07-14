@@ -1,0 +1,45 @@
+#include <stdio.h>
+int main() 
+{
+    int n, numero, sumaPositivos = 0, contadorPositivos = 0, sumaNegativos = 0, contadorNegativos = 0; // Variables para almacenar los datos y resultados
+    float promedioPositivos, promedioNegativos; // Variables para almacenar los promedios de los números positivos y negativos
+
+    printf("Ingrese la cantidad de numeros: ");
+    scanf("%d", &n); // Leer la cantidad de números ingresada por el usuario
+
+    if (n <= 0) {
+        printf("La cantidad de numeros debe ser mayor que cero.\n");
+        return 0; // Salir del programa si la cantidad de números es menor o igual a cero
+    }
+
+    printf("Ingrese los %d numeros:\n", n);
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &numero); // Leer cada número ingresado por el usuario
+
+        if (numero > 0) {
+            sumaPositivos += numero; // Sumar los números positivos
+            contadorPositivos++; // Incrementar el contador de números positivos
+        } else if (numero < 0) {
+            sumaNegativos += numero; // Sumar los números negativos
+            contadorNegativos++; // Incrementar el contador de números negativos
+        }
+    }
+
+    if (contadorPositivos > 0) {
+        promedioPositivos = (float) sumaPositivos / contadorPositivos; // Calcular el promedio de los números positivos
+        printf("El promedio de los numeros positivos es: %.2f\n", promedioPositivos); // Mostrar el promedio de los números positivos
+    } else {
+        printf("No se ingresaron numeros positivos.\n"); // Mostrar un mensaje si no se ingresaron números positivos
+    }
+
+    if (contadorNegativos > 0) {
+        promedioNegativos = (float) sumaNegativos / contadorNegativos; // Calcular el promedio de los números negativos
+        printf("El promedio de los numeros negativos es: %.2f\n", promedioNegativos); // Mostrar el promedio de los números negativos
+    } else {
+        printf("No se ingresaron numeros negativos.\n"); // Mostrar un mensaje si no se ingresaron números negativos
+    }
+
+    getch(); // Esperar a que el usuario presione una tecla
+    return 0;
+}
