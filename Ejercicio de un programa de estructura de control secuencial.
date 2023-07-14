@@ -1,0 +1,30 @@
+#include <stdio.h> //Biblioteca  para operaciones de entrada y salida
+int main() //Función principal del programa
+{
+    int num1, num2, suma, resta, multiplicacion, division;
+//Declaración de las variables
+    printf("Ingrese el primer numero: ");
+    scanf("%d", &num1);
+
+    printf("Ingrese el segundo numero: ");
+    scanf("%d", &num2);
+//Operaciones Aritméticas a realizar
+    suma = num1 + num2; // Se realiza la operación suma de los números ingresados
+    resta = num1 - num2; // Se realiza la operación resta de los números ingresados
+    multiplicacion = num1 * num2; // Se realiza la operación multiplicación de los números ingresados
+
+    if (num2 != 0) //Se utiliza el if como estructrura selectiva simple condicional
+	{
+        division = num1 / num2; // Se realiza la operación división de los números ingresados (si el segundo número no es cero)
+        printf("La division es: %d\n", division);
+    } else {
+        printf("No se puede realizar la division.\n"); // Imprime un mensaje si el segundo número es cero (no se puede realizar la división)
+    }
+
+    printf("La suma es: %d\n", suma); // Imprime el resultado de la suma
+    printf("La resta es: %d\n", resta); // Imprime el resultado de la resta
+    printf("La multiplicacion es: %d\n", multiplicacion); // Imprime el resultado de la multiplicación
+
+    getch(); 
+    return 0;
+}
