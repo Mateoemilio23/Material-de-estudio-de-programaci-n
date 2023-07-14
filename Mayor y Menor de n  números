@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main() 
+{
+    int n, numero, mayor, menor; // Variables para almacenar los datos y resultados
+    printf("Ingrese la cantidad de numeros: ");
+    scanf("%d", &n); // Leer la cantidad de números ingresada por el usuario
+
+    if (n <= 0) {
+        printf("La cantidad de numeros debe ser mayor que cero.\n");
+        return 0; // Salir del programa si la cantidad de números es menor o igual a cero
+    }
+
+    printf("Ingrese los %d numeros:\n", n);
+    scanf("%d", &numero);
+    mayor = menor = numero; // Inicializar las variables mayor y menor con el primer número ingresado
+
+    for (int i = 1; i < n; i++) {
+        scanf("%d", &numero); // Leer cada número ingresado por el usuario
+
+        if (numero > mayor) {
+            mayor = numero; // Actualizar el valor del mayor número si se encuentra uno mayor
+        }
+        if (numero < menor) 
+{
+            menor = numero; // Actualizar el valor del menor número si se encuentra uno menor
+        }
+    }
+    printf("El numero mayor es: %d\n", mayor); // Mostrar el número mayor
+    printf("El numero menor es: %d\n", menor); // Mostrar el número menor
+    getch(); 
+    return 0;
+}
