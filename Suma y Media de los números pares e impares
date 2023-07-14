@@ -1,0 +1,45 @@
+#include <stdio.h>
+int main() 
+{
+    int n, numero, sumaPares = 0, contadorPares = 0, sumaImpares = 0, contadorImpares = 0; // Variables para almacenar los datos y resultados
+    float mediaImpares; // Variable para almacenar la media de los números impares
+
+    printf("Ingrese la cantidad de numeros: ");
+    scanf("%d", &n); // Leer la cantidad de números ingresada por el usuario
+
+    if (n <= 0) {
+        printf("La cantidad de numeros debe ser mayor que cero.\n");
+        return 0; // Salir del programa si la cantidad de números es menor o igual a cero
+    }
+
+    printf("Ingrese los %d numeros:\n", n);
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &numero); // Leer cada número ingresado por el usuario
+
+        if (numero % 2 == 0) {
+            sumaPares += numero; // Sumar los números pares
+            contadorPares++; // Incrementar el contador de números pares
+        } else {
+            sumaImpares += numero; // Sumar los números impares
+            contadorImpares++; // Incrementar el contador de números impares
+        }
+    }
+
+    if (contadorPares > 0) {
+        printf("La suma de los numeros pares es: %d\n", sumaPares); // Mostrar la suma de los números pares
+        printf("La cantidad de numeros pares es: %d\n", contadorPares); // Mostrar la cantidad de números pares
+    } else {
+        printf("No se ingresaron numeros pares.\n"); // Mostrar un mensaje si no se ingresaron números pares
+    }
+
+    if (contadorImpares > 0) {
+        mediaImpares = (float) sumaImpares / contadorImpares; // Calcular la media de los números impares
+        printf("La media de los numeros impares es: %.2f\n", mediaImpares); // Mostrar la media de los números impares
+    } else {
+        printf("No se ingresaron numeros impares.\n"); // Mostrar un mensaje si no se ingresaron números impares
+    }
+
+    getch(); 
+    return 0;
+}
