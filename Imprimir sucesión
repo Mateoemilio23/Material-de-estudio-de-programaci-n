@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() 
+{
+    int n;
+    printf("Ingrese el numero de terminos (n): ");
+    scanf("%d", &n); // Leer el número de términos ingresado por el usuario
+
+    int numero = 10; // Inicializar el primer número de la sucesión
+    int diferencia = 2; // Inicializar la diferencia entre los términos
+
+    printf("Sucesion:\n");
+
+    for (int i = 0; i < n; i++) {
+        printf("%d\t", numero); // Mostrar el número actual de la sucesión
+
+        numero += diferencia; // Sumar la diferencia al número actual para obtener el siguiente término
+
+        diferencia = (diferencia == 2) ? 3 : 2; // Cambiar la diferencia entre 2 y 3 alternativamente
+    }
+    printf("\n");
+    getch(); 
+    return 0;
+}
