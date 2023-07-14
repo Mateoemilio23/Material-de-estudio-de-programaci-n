@@ -1,0 +1,22 @@
+#include <stdio.h> //Biblioteca  para operaciones de entrada y salida
+int main() //Función principal del programa
+{
+    int numero; // Variable para almacenar el número ingresado por el usuario
+
+    printf("Ingrese un numero: ");
+    scanf("%d", &numero); // Leer el número ingresado por el usuario y almacenarlo en la variable 'numero'
+
+    int contador = 0; // Variable para contar los números pares
+
+    do {
+        if (contador % 2 == 0) // Verificar si el contador es un número par utilizando el operador de módulo (%)
+		{ 
+            printf("%d ", contador); // Imprimir el número par
+        }
+        contador++; // Incrementar el contador en 1 en cada iteración del bucle
+    } 
+	while (contador <= numero); // Estructura de control de repetición do-while, se repite mientras el contador sea menor o igual al número ingresado
+    printf("\nFin del programa.\n"); // Imprimir un mensaje indicando el fin del programa
+    getch();
+    return 0;
+}
