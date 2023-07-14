@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main() 
+{
+    float nota1, nota2, nota3;
+    float promedio;
+    printf("Ingrese la primera nota: ");
+    scanf("%f", &nota1); // Leer la primera nota ingresada por el usuario
+    printf("Ingrese la segunda nota: ");
+    scanf("%f", &nota2); // Leer la segunda nota ingresada por el usuario
+    printf("Ingrese la tercera nota: ");
+    scanf("%f", &nota3); // Leer la tercera nota ingresada por el usuario
+
+    promedio = (nota1 + nota2 + nota3) / 3; // Calcular el promedio de las notas
+
+    printf("El promedio es: %.2f\n", promedio); // Mostrar el promedio en pantalla
+
+    if (promedio >= 7) {
+        printf("Aprobado\n"); // Mostrar "Aprobado" si el promedio es mayor o igual a 7
+    } else if (promedio >= 4) {
+        printf("Regular\n"); // Mostrar "Regular" si el promedio está entre 4 y 6.99
+    } else {
+        printf("Reprobado\n"); // Mostrar "Reprobado" si el promedio es menor a 4
+    }
+    getch(); 
+    return 0;
+}
