@@ -1,0 +1,20 @@
+#include <stdio.h> //Biblioteca  para operaciones de entrada y salida
+int main() //Función principal del programa
+ {
+    int edad; // Variable para almacenar la edad ingresada por el usuario
+
+    printf("Ingrese su edad: ");
+    scanf("%d", &edad); // Leer la edad ingresada por el usuario y almacenarla en la variable 'edad'
+
+    if (edad >= 18) 	 // Verificar si la edad es mayor o igual a 18
+	{
+        printf("Eres mayor de edad.\n"); // Imprimir un mensaje si la condición es verdadera
+    } 
+	else 
+	{
+        printf("Eres menor de edad.\n"); // Imprimir un mensaje si la condición es falsa
+    }
+    printf("Fin del programa.\n"); // Imprimir un mensaje indicando el fin del programa
+    getch();
+    return 0;
+}
