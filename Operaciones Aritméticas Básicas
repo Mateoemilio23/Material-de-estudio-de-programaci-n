@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <math.h>
+int main() 
+{
+    float baseTriangulo, alturaTriangulo, areaTriangulo;
+    float baseRectangulo, alturaRectangulo, areaRectangulo;
+    float ladoCuadrado, areaCuadrado;
+    float radioCirculo, areaCirculo;
+
+    // Solicitar variables de entrada para el triángulo
+    printf("Ingrese la base del triangulo: ");
+    scanf("%f", &baseTriangulo);
+    printf("Ingrese la altura del triangulo: ");
+    scanf("%f", &alturaTriangulo);
+
+    // Calcular el área del triángulo
+    areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
+
+    // Solicitar variables de entrada para el rectángulo
+    printf("Ingrese la base del rectangulo: ");
+    scanf("%f", &baseRectangulo);
+    printf("Ingrese la altura del rectangulo: ");
+    scanf("%f", &alturaRectangulo);
+
+    // Calcular el área del rectángulo
+    areaRectangulo = baseRectangulo * alturaRectangulo;
+
+    // Solicitar variables de entrada para el cuadrado
+    printf("Ingrese el lado del cuadrado: ");
+    scanf("%f", &ladoCuadrado);
+
+    // Calcular el área del cuadrado
+    areaCuadrado = ladoCuadrado * ladoCuadrado;
+
+    // Solicitar variables de entrada para el círculo
+    printf("Ingrese el radio del circulo: ");
+    scanf("%f", &radioCirculo);
+
+    // Calcular el área del círculo
+    areaCirculo = M_PI * pow(radioCirculo, 2);
+
+    // Mostrar resultados individuales
+    printf("El área del triangulo es: %.2f\n", areaTriangulo);
+    printf("El área del rectangulo es: %.2f\n", areaRectangulo);
+    printf("El área del cuadrado es: %.2f\n", areaCuadrado);
+    printf("El área del circulo es: %.2f\n", areaCirculo);
+    getch();
+    return 0;
+}
