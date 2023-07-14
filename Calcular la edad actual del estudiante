@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <time.h>
+
+int obtenerAnioActual() 
+{
+    time_t t = time(NULL);
+    struct tm *tm = localtime(&t);
+    return tm->tm_year + 1900;
+}
+int main() 
+{
+    char NOM[50], APE[50]; // Arreglos de caracteres para almacenar el nombre y apellido del estudiante
+    int ANIO, EDAD; // Variables para almacenar el año de nacimiento y la edad del estudiante
+
+    printf("Ingrese el nombre del estudiante: ");
+    scanf("%s", NOM); // Leer el nombre ingresado por el usuario y almacenarlo en el arreglo NOM
+
+    printf("Ingrese el apellido del estudiante: ");
+    scanf("%s", APE); // Leer el apellido ingresado por el usuario y almacenarlo en el arreglo APE
+
+    printf("Ingrese el año de nacimiento del estudiante: ");
+    scanf("%d", &ANIO); // Leer el año de nacimiento ingresado por el usuario y almacenarlo en la variable ANIO
+
+    int anioActual = obtenerAnioActual(); // Llamar a la función obtenerAnioActual() para obtener el año actual
+    EDAD = anioActual - ANIO; // Calcular la edad restando el año de nacimiento del año actual
+
+    printf("Nombre: %s\n", NOM); // Imprimir el nombre del estudiante
+    printf("Apellido: %s\n", APE); // Imprimir el apellido del estudiante
+    printf("Edad: %d años\n", EDAD); // Imprimir la edad del estudiante
+
+    getch(); // Esperar a que el usuario presione una tecla
+    return 0;
+}
