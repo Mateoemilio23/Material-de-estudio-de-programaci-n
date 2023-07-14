@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main() 
+{
+    int i, j, m, n;
+    printf("Ingrese el número de filas: ");
+    scanf("%d", &m);
+    printf("Ingrese el número de columnas: ");
+    scanf("%d", &n);
+
+    // Definir la matriz
+    int notas[m][n];
+    // Insertar datos en la matriz
+    for (i = 0; i < m; i++) 
+{
+        for (j = 0; j < n; j++) 
+{
+            printf("notas(%d,%d): ", i, j);
+            scanf("%d", &notas[i][j]);
+        }
+    }
+    getch(); 
+    return 0;
+}
+
