@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main() 
+{
+    int n;
+    int sexo;
+    int hombres = 0;
+    int mujeres = 0;
+    printf("Ingrese la cantidad de personas: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        printf("Ingrese el sexo de la persona #%d (0 = Hombre, 1 = Mujer): ", i);
+        scanf("%d", &sexo);
+
+        if (sexo == 0) {
+            hombres++;
+        } else if (sexo == 1) {
+            mujeres++;
+        } else {
+            printf("Opción inválida. Por favor, ingrese 0 para hombre o 1 para mujer.\n");
+            i--;
+        }
+    }
+    float porcentajeHombres = (float)hombres / n * 100;
+    float porcentajeMujeres = (float)mujeres / n * 100;
+    printf("\nPorcentaje de hombres: %.2f%%\n", porcentajeHombres);
+    printf("Porcentaje de mujeres: %.2f%%\n", porcentajeMujeres);
+    getch();
+    return 0;
+}
