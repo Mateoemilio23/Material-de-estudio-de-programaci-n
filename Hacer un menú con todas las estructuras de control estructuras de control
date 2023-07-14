@@ -1,0 +1,98 @@
+#include<stdio.h>
+
+int main() 
+{
+    int op, i, N, intervalo1 = 0, intervalo2 = 0, intervalo3 = 0; // Variables para almacenar las opciones, contadores y resultados
+    float peso, suma = 0, promedio, mayor = 0, tarifa, horas, costo, calificacion; // Variables para almacenar los datos ingresados y resultados
+    
+    printf("1.-Primer ejercicio:Peso\n");
+    printf("2.-Segundo ejercicio:Tarifa\n");
+    printf("3.-Tercer ejercicio:Notas\n");
+    printf("Escoja la opcion: ");
+    scanf("%d", &op); // Leer la opción seleccionada por el usuario
+
+    switch(op) 
+	{
+        case 1:
+            printf("Ingrese la cantidad de personas: ");
+            scanf("%d", &N); // Leer la cantidad de personas ingresada por el usuario
+            
+            for (i = 1; i <= N; i++) 
+			{
+                printf("Ingrese el peso de la persona %d: ", i);
+                scanf("%f", &peso); // Leer el peso de cada persona
+                
+                suma = suma + peso; // Sumar los pesos para calcular el promedio
+                if (peso > mayor) 
+				{
+                    mayor = peso; // Actualizar el peso mayor si se encuentra un peso mayor al actual
+                }
+            }
+            
+            promedio = suma / N; // Calcular el promedio de los pesos
+            printf("El promedio de los pesos es: %.2f\n", promedio); // Mostrar el promedio de los pesos
+            printf("El mayor peso es: %.2f\n", mayor); // Mostrar el mayor peso
+            break;
+        
+        case 2:
+            printf("Ingrese la tarifa del parqueadero: ");
+            scanf("%f", &tarifa); // Leer la tarifa del parqueadero
+            
+            printf("Ingrese las horas: ");
+            scanf("%f", &horas); // Leer la cantidad de horas
+            
+            if (horas <= 1) 
+			{
+                costo = tarifa; // Si las horas son menores o iguales a 1, el costo es igual a la tarifa
+            } 
+            else if (horas <= 3) 
+			{
+                costo = tarifa + (horas - 1) * (tarifa * 0.75); // Si las horas están entre 1 y 3, se aplica un descuento del 25% a partir de la segunda hora
+            } 
+            else if (horas <= 5) 
+			{
+                costo = tarifa + 2 * (tarifa * 0.75) + (horas - 3) * (tarifa * 0.5); // Si las horas están entre 3 y 5, se aplica un descuento del 50% a partir de la tercera hora
+            } 
+            else 
+			{
+                costo = tarifa + 2 * (tarifa * 0.75) + 2 * (tarifa * 0.5) + (horas - 5) * (tarifa * 0.25); // Si las horas son mayores a 5, se aplica un descuento del 75% a partir de la quinta hora
+            }
+            
+            printf("El costo total a pagar es: %f\n", costo); // Mostrar el costo total a pagar
+            break;
+            
+        case 3:
+            printf("Notas:\n");
+            printf("Ingrese la cantidad de calificaciones: ");
+            scanf("%d", &N); // Leer la cantidad de calificaciones
+            
+            for (i = 1; i <= N; i++) 
+			{
+                printf("Ingrese la calificacion %d: ", i);
+                scanf("%f", &calificacion); // Leer cada calificación
+                
+                if (calificacion >= 0 && calificacion < 4) 
+				{
+                    intervalo1++; // Contar las calificaciones en el intervalo [0, 4)
+                } 
+                else if (calificacion >= 4 && calificacion < 7)
+				 {
+                    intervalo2++; // Contar las calificaciones en el intervalo [4, 7)
+                } 
+                else if (calificacion >= 7 && calificacion <= 10) 
+				{
+                    intervalo3++; // Contar las calificaciones en el intervalo [7, 10]
+                }
+            }
+            
+            printf("Calificaciones en el Intervalo 1: %d\n", intervalo1); // Mostrar la cantidad de calificaciones en el intervalo [0, 4)
+            printf("Calificaciones en el Intervalo 2: %d\n", intervalo2); // Mostrar la cantidad de calificaciones en el intervalo [4, 7)
+            printf("Calificaciones en el Intervalo 3: %d\n", intervalo3); // Mostrar la cantidad de calificaciones en el intervalo [7, 10]
+            break;
+            
+        default:
+            printf("Escoja una opcion correcta.\n");
+    }
+    getch();
+    return 0;
+}
