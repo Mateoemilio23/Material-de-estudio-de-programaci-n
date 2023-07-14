@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int main() {
+    int i, j, n, cont = 0;
+    float mediana;
+    srand(time(NULL));
+
+    printf("Ingrese el tamaño del vector: ");
+    scanf("%d", &n);
+
+    // Definición del vector
+    int vec[n];
+
+    // Insertar datos en el vector de forma automática
+    printf("INSERTAR AUTOMATICAMENTE DATOS\n");
+    for (i = 0; i < n; i++) {
+        vec[i] = rand() % 11;
+    }
+
+    // Imprimir Vector Inicial
+    printf("IMPRIMIR VECTOR INICIAL\n");
+    for (i = 0; i < n; i++) {
+        printf("%d\t", vec[i]);
+    }
+
+    // Ordenar Vector con el algoritmo de Burbuja
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n - 1; j++) {
+            if (vec[j] > vec[j+1]) {
+                int aux = vec[j];
+                vec[j] = vec[j+1];
+                vec[j+1] = aux;
+            }
+        }
+    }
+
+    // Imprimir Vector Ordenado
+    printf("\nIMPRIMIR VECTOR ORDENADO\n");
+    for (i = 0; i < n; i++) {
+        printf("%d\t", vec[i]);
+    }
+
+    // Cálculo de la Mediana
+    if (n % 2 == 0) {
+        mediana = (float)(vec[(n/2) - 1] + vec[n/2]) / 2;
+    } else {
+        mediana = vec[n/2];
+    }
+    printf("\nLa mediana es: %f", mediana);
+    getch(); 
+    return 0;
+}
