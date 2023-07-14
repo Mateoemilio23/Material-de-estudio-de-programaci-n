@@ -1,0 +1,57 @@
+//Cálculo de la MODA 
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int main()
+{
+	int i,j,k=0,n,cont=0,mayor=0,indice;
+	srand(time(NULL));
+	printf("Ingrese el tamaño del vector:");
+	scanf("%d",&n);
+	//Definición del vector
+	int vec[n], lista[n];
+	
+	//Insertar datos en el vector
+	printf("INSERTAR AUTOMATICAMENTE DATOS\n");
+	for(i=0; i<n; i++)
+	{
+		vec[i]=rand()%11;
+	}
+	
+	//Imprimir Vector
+	printf("IMPRIMIR VECTOR INICIAL\n");
+	for(i=0; i<n; i++)
+	{
+		printf("%d\t",vec[i]);
+	}
+	
+	//Cálculo de las Repeticiones
+	int cont1=0;
+	for (i = 0; i < n; i++){
+		for (j = 0; j < n; j++){
+			if(vec[i]==vec[j])
+			{
+				cont1++;
+			}	
+		}
+		//printf("\nEl elemento %d se repite %d veces",vec[i],(cont1-1));	
+		//Insertar e imprimir las repeticione en el vector lista
+		lista[k]=cont1;
+		k++;	
+		cont1=0;
+	}
+		//Imprimir Vector Lista con las Repeticiones
+	printf("\nIMPRIMIR VECTOR REPETICIONES\n");
+	for(i=0; i<n; i++)
+	{
+		printf("%d\t",lista[i]);
+		if(lista[i]>mayor)
+		{
+			mayor=lista[i];
+			indice=i;
+		}
+	}
+	printf("\nLa moda es:%d",vec[indice]);
+	getch();
+	return 0;
+}
