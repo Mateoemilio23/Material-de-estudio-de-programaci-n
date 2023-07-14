@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main() 
+{
+    int longitudTotal, rollos500, rollos300, rollos75, metrosFaltantes;
+
+    printf("Ingrese la longitud total de alambre requerida (en metros): ");
+    scanf("%d", &longitudTotal); // Leer la longitud total de alambre requerida ingresada por el usuario
+
+    rollos500 = longitudTotal / 500;  // Cálculo de los rollos de 500 metros
+    longitudTotal = longitudTotal % 500; // Actualizar la longitud total con el residuo de la división
+
+    rollos300 = longitudTotal / 300;  // Cálculo de los rollos de 300 metros
+    longitudTotal = longitudTotal % 300; // Actualizar la longitud total con el residuo de la división
+
+    rollos75 = longitudTotal / 75;  // Cálculo de los rollos de 75 metros
+    metrosFaltantes = longitudTotal % 75; // Calcular los metros faltantes
+
+    printf("Numero de rollos de 500 metros: %d\n", rollos500); // Mostrar el número de rollos de 500 metros
+    printf("Numero de rollos de 300 metros: %d\n", rollos300); // Mostrar el número de rollos de 300 metros
+    printf("Numero de rollos de 75 metros: %d\n", rollos75); // Mostrar el número de rollos de 75 metros
+    printf("Metros de alambre faltantes: %d\n", metrosFaltantes); // Mostrar los metros de alambre faltantes
+    getch();
+    return 0;
+}
