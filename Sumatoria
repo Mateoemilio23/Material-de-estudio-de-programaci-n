@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+// Función para calcular el factorial de un número
+double factorial(int n) {
+    double fact = 1;
+
+    // Bucle para multiplicar todos los números desde 1 hasta n
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+
+    return fact;
+}
+
+// Función para calcular la potencia de un número
+double potencia(double x, int n) {
+    double pot = 1;
+
+    // Bucle para multiplicar el número x por sí mismo n veces
+    for (int i = 1; i <= n; i++) {
+        pot *= x;
+    }
+
+    return pot;
+}
+
+// Función para calcular la sumatoria utilizando la potencia y el factorial
+double calcularSumatoria(double x, int n) {
+    double sumatoria = 1;
+
+    // Bucle para iterar desde 1 hasta n y calcular cada término de la sumatoria
+    for (int i = 1; i <= n; i++) {
+        // Calcular el término de la sumatoria utilizando la potencia y el factorial
+        double termino = potencia(x, i) / factorial(i);
+        sumatoria += termino;
+    }
+
+    return sumatoria;
+}
+
+int main() {
+    double x;
+    int n;
+
+    printf("Ingrese el valor de x: ");
+    scanf("%lf", &x); // Leer el valor de x ingresado por el usuario
+
+    printf("Ingrese el valor de n: ");
+    scanf("%d", &n); // Leer el valor de n ingresado por el usuario
+
+    if (n <= 0) {
+        printf("El valor de n debe ser mayor que cero.\n");
+        return 0; // Salir del programa si n es menor o igual a cero
+    }
+
+    double resultado = calcularSumatoria(x, n); // Calcular la sumatoria utilizando la función calcularSumatoria
+    printf("La sumatoria es: %.4lf\n", resultado); // Mostrar el resultado de la sumatoria
+
+    getch(); // Esperar a que el usuario presione una tecla
+    return 0;
+}
