@@ -1,4 +1,4 @@
-# Material-de-estudio-de-programacion
+# Material de estudio de programación en Lenguaje C.
 En el siguiente repositorio, se presenta los conocimientos básicos de programación.
 
 Programa C++. 
